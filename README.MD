@@ -9,8 +9,6 @@ Este repositório principal organiza todos os meus estudos, exercícios e projet
 - [`ExerciciosPython/`](./ExerciciosPython) – Resolução de desafios e problemas.
 - [`EstudosFlutter/`](./EstudosFlutter) – Conceitos, widgets e práticas com Flutter.
 - [`ProjetosFlutter/`](./ProjetosFlutter) – Aplicativos desenvolvidos com Flutter.
-- [`EstudosJavaScript/`](./EstudosJavaScript) – Fundamentos e exemplos com JS.
-- [`ProjetosJavaScript/`](./ProjetosJavaScript) – Pequenos sistemas e projetos Web.
 - [`EstudosBancoDeDados/`](./EstudosBancoDeDados) – SQL, modelagem e consultas.
 - [`EstudosGitGithub/`](./EstudosGitGithub) – Comandos e boas práticas com Git.
 - [`EstudosAPIs/`](./EstudosAPIs) – Requisições HTTP, consumo de APIs REST.
