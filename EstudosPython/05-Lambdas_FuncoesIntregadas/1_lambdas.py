@@ -28,7 +28,6 @@ print(calc(4)) # 13
 print(calc(5)) # 16 
 
 
-"""
 
 # Podemos ter expressões lambdas com múltiplas entradas
 
@@ -54,3 +53,19 @@ print(uma(6))
 print(duas(5, 7))
 print(tres(3, 6, 9))
 
+
+# OBS: Se passarmos mais argumentos do que parametros esperados  teremos TypeError
+
+
+"""
+
+# Outro exemplo
+
+autores = ['Issac Asimov', 'Ray Bradbury', 'Robert Heinlein', 'Arthur C. Clarke', 'Frank Herbert', 'Orson Scott Card',
+           'Douglas Adams', 'H. G. Wells', 'Leigh Brackett']
+
+print(autores)
+
+autores.sort(key=lambda sobrenome: sobrenome.split(' ')[-1].lower())
+
+print(autores)
