@@ -57,7 +57,6 @@ print(tres(3, 6, 9))
 # OBS: Se passarmos mais argumentos do que parametros esperados  teremos TypeError
 
 
-"""
 
 # Outro exemplo
 
@@ -69,3 +68,30 @@ print(autores)
 autores.sort(key=lambda sobrenome: sobrenome.split(' ')[-1].lower())
 
 print(autores)
+
+
+
+"""
+
+
+
+# Função Quadrática
+#f(x) = a * x ** 2 + b * x + c
+# a, b e c são constantes
+
+# Definindo a função quadrática
+
+def geradora_funcao_quadratica(a, b, c):
+    """ Retorna a função f(x) = a * x ** 2 + b * x + c """
+    return lambda x: a * x ** 2 + b * x + c
+
+teste = geradora_funcao_quadratica(2, 3, -5)
+# teste = lambda x: 2 * x ** 2 + 3 * x - 5
+
+
+print(teste(0))
+print(teste(1))
+print(teste(2))
+
+
+print(geradora_funcao_quadratica(3, 0, 1)(2)) 
