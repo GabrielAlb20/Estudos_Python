@@ -21,7 +21,7 @@ mode r -. Modo de Leitura. r -> read() -> ler
 
 # Exemplo
 
-arquivo = open('texto.txt')
+#arquivo = open('texto.txt')
 
 #print(arquivo)
 
@@ -29,13 +29,13 @@ arquivo = open('texto.txt')
 
 # Para ler o conteúdo de um arquivo, após sua abertura, devemos utilizar a função read()
 
-ret = arquivo.read()
+#ret = arquivo.read()
 
-print(type(ret))
+#print(type(ret))
 
-print(ret)
+#print(ret)
 
-print(arquivo.read())
+#print(arquivo.read())
 
 # print(arquivo.read())
 
