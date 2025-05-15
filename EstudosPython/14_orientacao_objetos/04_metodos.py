@@ -33,6 +33,22 @@ print(p1.desconto(50))
 print(Produto.desconto(p1, 40)) # self, desconto
 
 
+
+user1 = Usuario('Angelina', 'Jolie', 'angeline@gmail.com', '12345')
+user2 = Usuario('Felicity', 'Jones', 'Felicity@gmail.com', '654321')
+
+print(user1.nome_completo())
+
+print(Usuario.nome_completo(user1))
+
+print(user2.nome_completo())
+
+# ACESSO ERRADO
+
+print(f'Senha User 1: {user1._Usuario__senha}') # Acesso de forma errada de um atributo de classe
+print(f'Senha User 2: {user2._Usuario__senha}') # Acesso de forma errada de um atributo de classe
+
+
 """
 
 class Lampada:
@@ -67,29 +83,46 @@ class Produto:
         """ Retorna o valor do produto com o desconto"""
         return (self.__valor * (100 - porcentagem)) / 100
     
+
+from passlib.hash import pbkdf2_sha256 as cryp 
+
+
 class Usuario:
     
     def __init__(self, nome, sobrenome, email, senha):
         self.__nome = nome
         self.__sobrenome = sobrenome
         self.__email = email
-        self.__senha = senha
+        self.__senha = cryp.encrypt(senha, rounds=200000, salt_size=16)
     
     def nome_completo(self):
         return f'{self.__nome} {self.__sobrenome}'
+    
 
-user1 = Usuario('Angelina', 'Jolie', 'angeline@gmail.com', '12345')
-user2 = Usuario('Felicity', 'Jones', 'Felicity@gmail.com', '654321')
+    def checa_senha(self, senha):
+        if cryp.verify(senha, self.__senha):
+            return True
+        return False
+    
 
-print(user1.nome_completo())
+nome = input('Informe o nome: ')
+sobrenome = input('Informe o sobrenome :')
+email = input('Informe o e-mail: ')
+senha = input('Informe a senha: ')
+confirma_senha = input('Confirme a senha: ')
 
-print(Usuario.nome_completo(user1))
+if senha == confirma_senha:
+    user = Usuario(nome, sobrenome, email, senha)
+else:
+    print('Senha não confere...')
 
-print(user2.nome_completo())
+print('Usuário criado com sucesso!')
 
-# ACESSO ERRADO
+senha = input("Informe a senha para acesso: ")
 
-print(f'Senha User 1: {user1._Usuario__senha}') # Acesso de forma errada de um atributo de classe
-print(f'Senha User 2: {user2._Usuario__senha}') # Acesso de forma errada de um atributo de classe
+if user.checa_senha(senha):
+    print('Acesso permitido')
+else:
+    print('Acesso negado')
 
-# PAREI 33:30
+print(f'Senha User Criptografada: {user._Usuario__senha}') # Acesso 
