@@ -1,7 +1,9 @@
+# Single Thread
 """
-
-
-"""
+    Em um programa single-threaded, todas as tarefas são executadas sequencialmente,
+    uma após a outra, dentro de um único fluxo de execução (a thread principal).
+    Imagine uma fila única onde cada pessoa (tarefa) precisa ser atendida completamente antes da próxima.
+ """
 
 import time
 from threading import Thread

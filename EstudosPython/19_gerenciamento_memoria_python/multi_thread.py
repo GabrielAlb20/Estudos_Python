@@ -1,3 +1,11 @@
+# Execução em Múltiplas Threads
+
+"""
+Em um programa multi-threaded, diferentes partes do programa podem ser executadas concorrentemente. Imagine várias filas sendo
+atendidas simultaneamente por diferentes atendentes (threads). No entanto, a forma como o Python implementa multi-threading
+ tem algumas nuances importantes devido ao Global Interpreter Lock (GIL).
+"""
+
 import time
 from threading import Thread
 

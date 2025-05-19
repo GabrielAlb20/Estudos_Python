@@ -1,4 +1,10 @@
-
+"""
+A principal razão para usar multiprocessing é para tarefas que são intensivas em CPU. Como mencionado anteriormente,
+devido ao GIL, threads em Python não conseguem executar código Python bytecode simultaneamente em múltiplos núcleos.
+Processos, por outro lado, são entidades separadas pelo sistema operacional e podem ser distribuídos entre os núcleos da CPU,
+permitindo uma aceleração significativa para cálculos complexos.
+    
+"""
 import time
 from multiprocessing import Pool
 
